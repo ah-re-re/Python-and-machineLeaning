@@ -1,7 +1,7 @@
 import cv2
 from cvzone.HandTrackingModule import HandDetector  #thư viện https://github.com/cvzone/cvzone
 
-cap = cv2.VideoCapture(0)  #tạo đối tượng cap
+cap = cv2.VideoCapture(1)  #tạo đối tượng cap
 cap.set(1, 1280)    #đặt kích thước: chiều rộng, chiều cao
 cap.set(2, 720)
 
@@ -46,11 +46,11 @@ while True:
         #     chia hết cho 2 rồi nhân thêm 2 lần nữa rồi chia hết cho 2, tuy chỉ là gần bằng nhưng có thể được
 
 
-        #img[cy - newH -20 :cy + newH // 2, cx - newW // 2:cx + newW // 2] = img1
+
         img[cy - newH - 20:cy + newH // 2, cx - newW // 2:cx + newW // 2] = img1
     except:
         pass
 
-    img[10:260, 10:260] = img1
+    # img[10:260, 10:260] = img1
     cv2.imshow("Image", img)
     cv2.waitKey(1)
